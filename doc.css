@@ -1,0 +1,49 @@
+/* Страницы документов (политика, согласие): те же цвета и шрифты, что на главной.
+   Текст лежит на «листе», как квитанция в сцене с ценой. */
+:root {
+  --canvas: #ebe5d8;
+  --paper: #f7f3ea;
+  --ink: #1c2130;
+  --ink-soft: #5a5e6a;
+  --accent: #24336e;
+  --hair: rgb(28 33 48 / .14);
+  --font-display: "IBM Plex Serif", "Georgia", "Times New Roman", serif;
+  --font-text: "Onest", "Segoe UI", system-ui, sans-serif;
+  --gutter: clamp(1rem, 4vw, 4rem);
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--canvas); color: var(--ink); font-family: var(--font-text);
+  font-size: clamp(1rem, .96rem + .22vw, 1.0625rem); line-height: 1.6; }
+a { color: var(--accent); text-underline-offset: .18em; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
+
+.doc-bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  padding: .9rem var(--gutter); border-bottom: 1px solid var(--hair); }
+.doc-bar__mark { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.1rem, 1rem + .4vw, 1.3rem);
+  color: var(--ink); text-decoration: none; }
+.doc-bar__back { font-weight: 600; font-size: .95rem; min-height: 44px; display: inline-flex; align-items: center; }
+
+.doc { max-width: 52rem; margin: clamp(1.5rem, 4vw, 3.5rem) auto; padding: 0 var(--gutter); }
+.sheet { background: var(--paper); border-radius: 4px; padding: clamp(1.4rem, 5vw, 3.5rem);
+  box-shadow: 0 1px 2px rgb(60 52 38 / .10), 0 18px 44px rgb(60 52 38 / .14); }
+.sheet h1 { font-family: var(--font-display); font-weight: 600; letter-spacing: -.015em;
+  font-size: clamp(1.75rem, 1.4rem + 1.6vw, 2.6rem); line-height: 1.1; margin: 0 0 .6rem; text-wrap: balance; }
+.sheet__date { color: var(--ink-soft); font-size: .95rem; margin: 0 0 2rem; }
+.sheet__note { background: rgb(36 51 110 / .07); border-left: 3px solid var(--accent); padding: .9rem 1.1rem;
+  margin: 0 0 2.2rem; font-size: .95rem; color: var(--ink); border-radius: 0 4px 4px 0; }
+.sheet h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.15rem, 1.05rem + .5vw, 1.4rem);
+  line-height: 1.25; margin: 2.2rem 0 .7rem; padding-top: 1.4rem; border-top: 1px solid var(--hair); }
+.sheet h2:first-of-type { border-top: 0; padding-top: 0; }
+.sheet p, .sheet li { max-width: 68ch; }
+.sheet p { margin: 0 0 .9rem; }
+.sheet ul { margin: 0 0 .9rem; padding-left: 1.2rem; }
+.sheet li { margin-bottom: .35rem; }
+/* Поля, которые заполняются данными заказчика */
+.fill { background: rgb(36 51 110 / .1); color: var(--accent); padding: 0 .3em; border-radius: 3px; white-space: nowrap; }
+.sheet__sign { margin-top: 2.4rem; padding-top: 1.4rem; border-top: 1px solid var(--hair); color: var(--ink-soft); font-size: .95rem; }
+
+.doc-foot { max-width: 52rem; margin: 0 auto; padding: 1.5rem var(--gutter) 2.5rem; display: flex; flex-wrap: wrap;
+  justify-content: space-between; gap: .6rem 1.5rem; font-size: .875rem; color: var(--ink-soft); }
+.doc-foot a { color: var(--ink-soft); }
+@media (max-width: 480px) { .fill { white-space: normal; } }

@@ -357,6 +357,7 @@
   .close__meta a { color: var(--v-ink); display: inline-flex; align-items: center; min-height: 44px; }
   .foot { display: flex; justify-content: space-between; gap: var(--v-4); padding: var(--v-6) 0; border-top: 1px solid var(--v-hair); font-size: var(--v-t-xs); color: var(--v-ink-soft); flex-wrap: wrap; }
   .foot b { font-weight: 600; color: var(--v-ink); }
+  .foot a, .lead__agree a { color: inherit; text-underline-offset: .18em; }
   .close__hint .close__tel { font-size: inherit; min-height: 0; display: inline; text-decoration: underline; text-underline-offset: .18em; }
   /* форма заявки на замер */
   .lead { display: grid; grid-template-columns: 1fr 1fr; gap: var(--v-4); padding: var(--v-6); border-radius: var(--v-radius); background: var(--v-surface); box-shadow: var(--v-e2); }
@@ -656,7 +657,7 @@
                 </select>
               </label>
               <label class="lead__field"><span>Город или район</span><input name="area" type="text" placeholder="Например, Химки"></label>
-              <label class="lead__agree"><input type="checkbox" name="agree" required> <span>Согласен на обработку персональных данных</span></label>
+              <label class="lead__agree"><input type="checkbox" name="agree" required> <span>Согласен на <a href="soglasie.html" target="_blank" rel="noopener">обработку персональных данных</a> и с <a href="politika.html" target="_blank" rel="noopener">политикой конфиденциальности</a></span></label>
               <button class="v-btn lead__btn" type="submit" data-v-magnet="0.22">Вызвать замерщика</button>
               <p class="lead__done" role="status" hidden>Спасибо! Перезвоним в часы работы и договоримся о замере.</p>
             </form>
@@ -664,6 +665,8 @@
           <footer class="foot">
             <span>Шторы на заказ · Москва и Московская область</span>
             <span>Замер, пошив и навеска</span>
+            <a href="politika.html">Политика конфиденциальности</a>
+            <a href="soglasie.html">Согласие на обработку данных</a>
             <span>Демо-сайт: телефон и цены – примеры</span>
           </footer>
         </div>
